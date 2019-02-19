@@ -22,11 +22,11 @@ _Este se encarga de la parte administrativa , de las operaciones crud de emplead
 _y despues  se instala Laragon para obtener el servidor y la linea de comandos en_
 
 ```
-    [Laragon](https://laragon.org/download/index.html) - Paquete con servidor
+    [Laragon] (https://laragon.org/download/index.html) - Paquete con servidor
 ```
 
 _finalmente se instala git, se crea la cuenta en git hub y se hacen las configuraciones_
 
 ```
-   [Git Hub](http://www.github.com) - Repositorio
+   [Git Hub] (http://www.github.com) - Repositorio
 ```
