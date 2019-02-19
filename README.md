@@ -19,14 +19,14 @@ _Este se encarga de la parte administrativa , de las operaciones crud de emplead
 ```
     Primero se instala laravel con composer con el comando 'composer global require "laravel/installer=~1.1"'
 ```
-_y despues_
+_y despues  se instala Laragon para obtener el servidor y la linea de comandos en_
 
 ```
-    Despues se instala Laragon para obtener el servidor y la linea de comandos en [Laragon](https://laragon.org/download/index.html)
+    [Laragon](https://laragon.org/download/index.html) - Paquete con servidor
 ```
 
-_finalmente se instala github y se hacen las configuraciones_
+_finalmente se instala git, se crea la cuenta en git hub y se hacen las configuraciones_
 
 ```
-   [Git Hub](https://desktop.github.com/)
+   [Git Hub](http://www.github.com) - Repositorio
 ```
