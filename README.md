@@ -1,6 +1,5 @@
-# PROYECTO PROGRAMACION PARA INTERNET
+# PROYECTO PROGRAMACION PARA INTERNET "CAKE SHOP"
 
-## Diaz Escobar Munoz Victor Otniel
 
 ### Descripcion 
 _Este sistema trata sobre la administracion de una franquicia de sucursales de pastelerias la cual contiene:_
@@ -30,3 +29,12 @@ _finalmente se instala git, se crea la cuenta en git hub y se hacen las configur
 ```
    [Git Hub] (http://www.github.com) - Repositorio
 ```
+   _instalacion de Git Hub_
+   1. git clone https://github.com/otnielmunozdev/cakeshop 
+   2. cd cakeshop 
+   3. composer install
+   4. cp .env.example copiar y pegar cambiar de nombre a .env
+    
+
+## Autores 
+_Diaz Escobar Munoz Victor Otniel_
