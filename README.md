@@ -34,6 +34,7 @@ _finalmente se instala git, se crea la cuenta en git hub y se hacen las configur
    2. cd cakeshop 
    3. composer install
    4. cp .env.example copiar y pegar cambiar de nombre a .env
+   5. php artisan key:generate
     
 
 ## Autores 

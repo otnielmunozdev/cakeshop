@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "otnielmunozdev/cakeshop",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Sistema de pastelerias.",
     "keywords": [
         "framework",
         "laravel"
