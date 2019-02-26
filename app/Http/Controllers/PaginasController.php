@@ -18,7 +18,7 @@ class PaginasController extends Controller
 
     public function productos()
     {
-        return view("Paginas.contacto");
+        return view("Paginas.productos");
     }
 
     public function sucursales()

@@ -18,6 +18,6 @@ Route::get('/', function () {
 Route::get('/informacion', 'PaginasController@informacion');
 Route::get('/contacto', 'PaginasController@contacto');
 Route::get('/productos', 'PaginasController@productos');
-Route::get('/promocion', 'PaginasController@promocion');
+Route::get('/promociones', 'PaginasController@promociones');
 Route::get('/sucursales', 'PaginasController@sucursales');
 Route::get('/administrador', 'PaginasController@administrador');
