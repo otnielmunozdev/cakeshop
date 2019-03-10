@@ -21,3 +21,7 @@ Route::get('/productos', 'PaginasController@productos');
 Route::get('/promociones', 'PaginasController@promociones');
 Route::get('/sucursales', 'PaginasController@sucursales');
 Route::get('/administrador', 'PaginasController@administrador');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
