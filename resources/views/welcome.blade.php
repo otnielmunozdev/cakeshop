@@ -11,7 +11,7 @@
 
         <!-- Styles -->
         <style>
-            html, body {
+           /* html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -60,6 +60,10 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }*/
+            #contenedor{
+                padding: 600px;
+                background-color: pink;
             }
         </style>
     </head>
@@ -68,7 +72,7 @@
 
         @section('content')
 
-        <div class="flex-center position-ref full-height">
+       {{--  <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -89,6 +93,16 @@
                 </div>
 
             </div>
+        </div> --}}
+        
+        <div class="container-fluid" id="contenedor">
+            <div class="row">
+                <div class="col-12">
+
+                </div>
+            
+            </div>
+        
         </div>
         @endsection
     </body>
