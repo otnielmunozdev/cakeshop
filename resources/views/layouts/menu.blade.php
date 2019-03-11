@@ -84,6 +84,8 @@ Siguenos:
             @yield('content') <!--aqui inicia la seccion -->
     </main>
 
+    
+
 
 
 

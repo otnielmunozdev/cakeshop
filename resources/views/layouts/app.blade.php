@@ -21,34 +21,56 @@
     <link rel="shortcut icon" href="{{ asset('img/pastelitos.png') }}">
     <style>
             #menu{
-              background: linear-gradient(to right, rgba(251,166,225,1) 4%, rgba(251,166,225,0.82) 30%, rgba(253,137,215,0.68) 51%, rgba(253,137,215,0.44) 86%);
+              background: #fff;/*linear-gradient(to right, rgba(251,166,225,1) 4%, rgba(251,166,225,0.82) 30%, rgba(253,137,215,0.68) 51%, rgba(253,137,215,0.44) 86%)*/
               border-bottom: 2px solid white;
+              padding-bottom: 40px;
     
             }
     
             #menu .transparente{
               background: rgba(26, 25, 25, 0.062);
             }
-    
-        
+
+            #menu li a,#menu a img {
+                font-size: 1.5em;
+                font-style: oblique;
+                margin-top: 15px; 
+            }
+            #hamburguesa{
+                border:none;
+            }
+            #menunav li a, #hamburguesa {
+                background-color: #fff;
+                transition:0.4s ;
+            }
+            #menunav li a:hover,#hamburguesa:hover{
+                border-radius:5px; 
+                background-color: rgba(73, 48, 31, .8);
+                color: #fff;
+            }
         </style>
 </head>
 
 
 <body>
-    <div class="container text-center">
+
+
+    <div class="container text-center d-md-none d-lg-block">
         <span style="color: red; font-family: Arial;" class="mr-4"> Servicio a Domicilio    </span><span style="color: green; font-family: Luna;" class="mr-4">SIN COSTO EN ÁREA LIMITADA Y EN COMPRAS MAYORES A $200.</span><span style="color: blue; font-family: Helvetica;"> Sujeto a disponibilidad en sucursales.<span>        
     </div>
-                <!--Navegacion-->
+
+
+
+    {{--Navegacion--}}
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top text-center" id="menu">
+        <nav class="navbar navbar-expand-md navbar-light sticky-top text-center" id="menu">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Pasteleria') --}}
-                    <img src="{{ asset('css/app.css') }}" alt="pasteleria" width="50px"  class="d-inline-block align-top" >
+                    <img src="{{ asset('img/pastelitos.') }}" alt="pasteleria" width="60px"  class="d-inline-block align-top" >
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" id="hamburguesa">
+                        Men&uacute; <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -58,17 +80,17 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" id="menunav">
                         <!-- Authentication Links -->
                         <li>
-                            <a href="{{ action('PaginasController@informacion') }}" class="nav-link">¿Quienes Somos?</a>{{-- apunta al controlador metodo --}}             
+                            <a href="{{ action('PaginasController@informacion') }}" class="nav-link">Con&oacute;cenos</a>{{-- apunta al controlador metodo --}}             
                         </li>
                         <li  class="nav-item dropdown">
                             <a href="{{ action('PaginasController@productos') }}" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Productos
                             </a>      
                             <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="productos">Pasteles</a>
+                                <a class="dropdown-item" href="#">Pasteles</a>
                                 <a class="dropdown-item" href="#">Galletas</a>
                                 <a class="dropdown-item" href="#">Muffins</a>
                                 <a class="dropdown-item" href="#">Pays</a>
@@ -85,6 +107,8 @@
                         <li>
                             <a href="{{ action('PaginasController@contacto') }}" class="nav-link">Contacto</a>         
                         </li>
+
+                        
                         <li  class="nav-item dropdown">
                             <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cuenta
@@ -120,9 +144,12 @@
                 </div>
             </div>
         </nav>
+        {{--fin de navegacion--}}
 
-        <main class="py-4">
-            @yield('content')
+        <div class="w-100"></div>
+
+        <main class="">
+                @yield('content') <!--aqui inicia la seccion -->
         </main>
     </div>
 </body>

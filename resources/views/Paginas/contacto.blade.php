@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.app')
 
 @section('content')
 
@@ -8,5 +8,11 @@
     Formulario de contacto .....
 </p>
 </div>
+
+  <footer class="">
+    @include('layouts.footer')
+  </footer>
     
 @endsection
+
+
