@@ -1,22 +1,17 @@
 @extends('layouts.app')
-
 @section('content')
+<h1>Documentos de {{ session('apodo') }}</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h4 class="alert-heading"><strong> Bienvenido!</strong></h4>
+                    <hr>
+                <p class="mb-0">Has accedido a tu cuenta.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            
         </div>
     </div>
 </div>

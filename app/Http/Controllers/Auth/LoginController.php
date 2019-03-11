@@ -27,6 +27,13 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    protected  function redirectTo()
+    {
+        //session(['apodo' => 'Sam']);
+        session(['apodo' =>\Auth::user()->name]);
+
+    }
+
     /**
      * Create a new controller instance.
      *

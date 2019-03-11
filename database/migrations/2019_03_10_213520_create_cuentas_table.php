@@ -15,11 +15,11 @@ class CreateCuentasTable extends Migration
     {
         Schema::create('cuentas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('cliente_id');
+            $table->unsignedInteger('user_id');
             $table->date('fecha_registro');
             $table->boolean('status');
 
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         });
