@@ -17,6 +17,8 @@ class CreateSucursalesTable extends Migration
             $table->increments('id')->unique();
             $table->string('direccion');
             $table->dateTime('Horario');
+            $table->string('mapa');
+            $table->string('telefono');
             $table->timestamps();
         });
     }

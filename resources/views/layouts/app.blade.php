@@ -14,17 +14,18 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Margarine|Oswald|Srisakdi|Sniglet|Pacifico|Nunito" rel="stylesheet"> 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/pastelitos.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/logo2.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/sucursales.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/promociones.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/informacion.css') }}">
     <style>
             #menu{
               background: #fff;/*linear-gradient(to right, rgba(251,166,225,1) 4%, rgba(251,166,225,0.82) 30%, rgba(253,137,215,0.68) 51%, rgba(253,137,215,0.44) 86%)*/
-              border-bottom: 2px solid white;
-              padding-bottom: 40px;
-    
+              font-family: 'Pacifico';
             }
     
             #menu .transparente{
@@ -34,7 +35,6 @@
             #menu li a,#menu a img {
                 font-size: 1.5em;
                 font-style: oblique;
-                margin-top: 15px; 
             }
             #hamburguesa{
                 border:none;
@@ -67,7 +67,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Pasteleria') --}}
-                    <img src="{{ asset('img/pastelitos.') }}" alt="pasteleria" width="60px"  class="d-inline-block align-top" >
+                    <img src="{{ asset('img/logo.png') }}" alt="pasteleria" width="100px"  class="d-inline-block align-top" >
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" id="hamburguesa">
                         Men&uacute; <span class="navbar-toggler-icon"></span>
@@ -98,7 +98,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ action('PaginasController@sucursales') }}" class="nav-link">sucursales</a>         
+                            <a href="{{ action('SucursalController@index') }}" class="nav-link">Sucursales</a>         
                         </li>
                         <li>
                             <a href="{{ action('PaginasController@promociones') }}" class="nav-link">Promociones</a>         

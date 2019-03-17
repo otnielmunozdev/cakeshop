@@ -97,7 +97,7 @@
 
 
             #contenedor  .titulo {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: 'Srisakdi';
                 color: #fff;
             }
             #contenedor .p-4{
@@ -145,7 +145,10 @@
         <div class="container-fluid" id="contenedor">
             <div class=" row align-items-center transparente">
                     <div class="col-12 ">
-                        <h1 class="display-3 text-center titulo"><strong><p>Pasteleria Cake Shop</p></strong></h1>
+                        <h1 class="display-3 text-center titulo " style=""><strong><p>Pasteleria Cake Shop</p></strong></h1>
+                    </div>
+                    <div class="col-12 text-center ">
+                        <img src="{{ asset('img/logo2.png') }}" alt="pastel" width="" class="img-fluid">
                     </div>
                     <div class="col-12">
                         <p class="p-4 text-center titulo" >Tenemos los mejores pasteles de GDL. <br>Ademas de muchos otros productos como 

@@ -1,0 +1,24 @@
+#contenedorsucursal .row{
+    background-color: rgba(51, 37, 30, 0.452);
+}
+#contenedorsucursal .row{
+    height: 60vh;
+    margin-bottom: 20px; 
+    border: 10px solid rgb(44, 32, 21);
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-family: 'Sniglet';
+    color: #ffffff;
+}
+
+#sucursaltitulo{
+    color:rgba(73, 48, 31);
+    font-family: 'Margarine';
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.205);
+}
+
+
+
