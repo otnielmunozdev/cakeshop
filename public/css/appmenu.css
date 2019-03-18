@@ -1,0 +1,25 @@
+#menu{
+    background: #fff;/*linear-gradient(to right, rgba(251,166,225,1) 4%, rgba(251,166,225,0.82) 30%, rgba(253,137,215,0.68) 51%, rgba(253,137,215,0.44) 86%)*/
+    font-family: 'Pacifico';
+  }
+
+  #menu .transparente{
+    background: rgba(26, 25, 25, 0.062);
+  }
+
+  #menu li a,#menu a img {
+      font-size: 1.5em;
+      font-style: oblique;
+  }
+  #hamburguesa{
+      border:none;
+  }
+  #menunav li a, #hamburguesa {
+      background-color: #fff;
+      transition:0.4s ;
+  }
+  #menunav li a:hover,#hamburguesa:hover{
+      border-radius:5px; 
+      background-color: rgba(73, 48, 31, .8);
+      color: #fff;
+  }

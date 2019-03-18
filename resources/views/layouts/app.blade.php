@@ -22,39 +22,11 @@
     <link rel="stylesheet" href="{{ asset('css/sucursales.css') }}">
     <link rel="stylesheet" href="{{ asset('css/promociones.css') }}">
     <link rel="stylesheet" href="{{ asset('css/informacion.css') }}">
-    <style>
-            #menu{
-              background: #fff;/*linear-gradient(to right, rgba(251,166,225,1) 4%, rgba(251,166,225,0.82) 30%, rgba(253,137,215,0.68) 51%, rgba(253,137,215,0.44) 86%)*/
-              font-family: 'Pacifico';
-            }
-    
-            #menu .transparente{
-              background: rgba(26, 25, 25, 0.062);
-            }
-
-            #menu li a,#menu a img {
-                font-size: 1.5em;
-                font-style: oblique;
-            }
-            #hamburguesa{
-                border:none;
-            }
-            #menunav li a, #hamburguesa {
-                background-color: #fff;
-                transition:0.4s ;
-            }
-            #menunav li a:hover,#hamburguesa:hover{
-                border-radius:5px; 
-                background-color: rgba(73, 48, 31, .8);
-                color: #fff;
-            }
-        </style>
+    <link rel="stylesheet" href="{{ asset('css/appmenu.css') }}">
 </head>
 
 
 <body>
-
-
     <div class="container text-center d-md-none d-lg-block">
         <span style="color: red; font-family: Arial;" class="mr-4"> Servicio a Domicilio    </span><span style="color: green; font-family: Luna;" class="mr-4">SIN COSTO EN ÁREA LIMITADA Y EN COMPRAS MAYORES A $200.</span><span style="color: blue; font-family: Helvetica;"> Sujeto a disponibilidad en sucursales.<span>        
     </div>
@@ -98,7 +70,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ action('SucursalController@index') }}" class="nav-link">Sucursales</a>         
+                            <a href="{{ action('SucursalController@mostrarSucursalVistaUsuario') }}" class="nav-link">Sucursales</a>         
                         </li>
                         <li>
                             <a href="{{ action('PaginasController@promociones') }}" class="nav-link">Promociones</a>         

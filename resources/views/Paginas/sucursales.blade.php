@@ -14,7 +14,7 @@
 
             <span>{{ $sucur->direccion}}</span><br>
             <span>Telefono: {{ $sucur->telefono}}</span>
-            <p><strong>Horario:{{ $sucur->Horario}}</strong></p>
+            <p><strong>Horario: {{ $sucur->horario}}</strong></p>
 
         </div>
         <div class="col-8 transparente">

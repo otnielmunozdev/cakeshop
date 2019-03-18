@@ -37,7 +37,7 @@
         <div id="content-wrapper">
             <div class="container-fluid">
                 <!-- Breadcrumbs-->
-                @include('layouts.directorioAdmin')
+                {{--@include('layouts.directorioAdmin')--}}
                 <div class="container">
                         @yield('contenido')
                 </div>

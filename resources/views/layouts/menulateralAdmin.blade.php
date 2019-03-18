@@ -12,8 +12,8 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="pagesDropdown">
         <h6 class="dropdown-header">Operaciones CRUD:</h6>
-        <a class="dropdown-item" href="{{--route('/')--}}">Crear</a>
-        <a class="dropdown-item" href="{{--route('/')--}}">Mostrar</a>
+        <a class="dropdown-item" href="{{route('sucursales.create')}}">Crear</a>
+        <a class="dropdown-item" href="{{route('sucursales.index')}}">Mostrar</a>
         <a class="dropdown-item" href="{{--route('/')--}}">Editar</a>
         <a class="dropdown-item" href="{{--route('/')--}}">Eliminar</a>
       </div>

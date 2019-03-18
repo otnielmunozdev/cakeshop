@@ -16,8 +16,8 @@ class CreateSucursalesTable extends Migration
         Schema::create('sucursales', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('direccion');
-            $table->dateTime('Horario');
-            $table->string('mapa');
+            $table->string('horario');
+            $table->string('mapa',500);
             $table->string('telefono');
             $table->timestamps();
         });
