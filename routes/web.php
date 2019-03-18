@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicioAdministrador', function () {
+    return view('inicioAdministrador');
+});
+
+
 Route::get('/informacion', 'PaginasController@informacion');
 Route::get('/contacto', 'PaginasController@contacto');
 Route::get('/sucursales', 'SucursalController@index')->name('sucursales.index');
