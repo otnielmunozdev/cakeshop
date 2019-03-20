@@ -13,7 +13,7 @@
         <div class ="col-4">
 
             <span>{{ $sucur->direccion}}</span><br>
-            <span>Telefono: {{ $sucur->telefono}}</span>
+            <span>Tel&eacute;fono: {{ $sucur->telefono}}</span>
             <p><strong>Horario: {{ $sucur->horario}}</strong></p>
 
         </div>
