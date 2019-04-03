@@ -16,12 +16,14 @@
 <div class="card">
 <div class="card-header ">
     <h3 class="card-title">Listado de Sucursales</h3>
+    <div class="text-right">
     <a href="{{route('sucursales.create')}}" class=" btn btn-success btn-sm ">+ Agregar</a>   
+    </div>
 </div>
     <div class="row">
         <div class="container">
             <div class="card-body">
-                <table class="table table-responsive  table-striped ">
+                <table class="table table-responsive  table-hover">
                     <thead>
                         <th scope="col">ID</th>
                         <th scope="col">Direcci&oacute;n</th>

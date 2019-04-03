@@ -52,6 +52,14 @@ class SucursalController extends Controller
     {
         //dd('Entra a metodo storage');
        // dd($request->all());
+       $request->validate([
+        'direccion' => 'required|min:10|max:100',
+        'horario' => 'required|min:19|max:19',
+        'mapa' => 'required|url|min:30',
+        'telefono' => 'required|min:10',
+    ]);
+    
+
        $suc = new Sucursal();
        $suc->direccion = $request->input('direccion');//trae la informacion del formualrio del campo llamado dependencia
        $suc->horario = $request->horario; //es lo mismo
