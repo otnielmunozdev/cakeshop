@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top sticky-top flex-md-nowrap" style="background: linear-gradient(90deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ">
 
-<a class="navbar-brand mr-1" href="url{{('inicioAdministrador')}}">PANEL DE ADMINISTRACI&Oacute;N</a>
+<a class="navbar-brand mr-1" href="{{url('inicioAdministrador')}}">PANEL DE ADMINISTRACI&Oacute;N</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>

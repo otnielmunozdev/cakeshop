@@ -24,7 +24,7 @@ class SucursalController extends Controller
         //->where('id', '>' ,'1')
         //->where('envia','pedro');
  
-        //dd($sucursales);
+    dd($sucursales);
     //return $docs;
        // return view('Paginas.sucursales', compact('sucursales'));
         //->with(['docs'=> $docs]);

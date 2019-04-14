@@ -25,7 +25,7 @@
                         <th scope="col">Horario</th>
                         <th scope="col">Mapa</th>
                         <th scope="col">Tel&eacute;fono</th>
-                        <th scope="col" colspan="2" class="text-center">Acciones</th>
+                        <th scope="col" colspan="6" class="text-center">Acciones</th>
                     </thead>
                     <tbody>
                             <tr>
@@ -35,13 +35,13 @@
                                 <td>{{$sucursale->mapa}}</td>
                                 <td>{{$sucursale->telefono}}</td>
                             <td >
-                            <a href="{{route('sucursales.edit',$sucursale->id) }}" class="btn btn-warning btn-sm">*Editar</a>    
+                            <a href="{{route('sucursales.edit',$sucursale->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>    
                             </td>
                             <td>
                                 <form action="{{route('sucursales.destroy',$sucursale->id)}}" method="POST">
                                 @csrf
                                     <input type="hidden" name="_method" value="DELETE">  {{--se manda un input oculto para que laravel sepa que hacer DELETE / PUT / PATCH--}}
-                                    <button  class="btn btn-danger btn-sm">-Borrar</button>
+                                    <button  class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Borrar</button>
                                 {{--<a href="{{route('sucursales.show',$depen->id)}}" class="btn btn-info btn-sm">Detalle</a>--}}
                                 </form>
                             </td>

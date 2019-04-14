@@ -17,7 +17,7 @@
 <div class="card-header ">
     <h3 class="card-title">Listado de Sucursales</h3>
     <div class="text-right">
-    <a href="{{route('sucursales.create')}}" class=" btn btn-success btn-sm ">+ Agregar</a>   
+    <a href="{{route('sucursales.create')}}" class=" btn btn-success btn-sm "><i class="fas fa-plus"></i> Agregar</a>   
     </div>
 </div>
     <div class="row">
@@ -30,7 +30,7 @@
                         <th scope="col">Horario</th>
                         <th scope="col">Mapa</th>
                         <th scope="col">Tel&eacute;fono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" colspan="6">Acciones</th>
                     </thead>
                     <tbody>
                         @foreach ($sucursales as $sucurs)
@@ -40,8 +40,8 @@
                                 <td>{{$sucurs->horario}}</td>
                                 <td>{{$sucurs->mapa}}</td>
                                 <td>{{$sucurs->telefono}}</td>
-                                <td>
-                                    <a href="{{route('sucursales.show',$sucurs->id)}}" class="btn btn-info btn-sm">Detalle</a>
+                                <td colspan="6">
+                                    <a href="{{route('sucursales.show',$sucurs->id)}}" class="btn btn-info btn-sm"><i class="fas fa-exclamation"></i> Detalle</a>
                                 </td>
                             </tr>
                         @endforeach

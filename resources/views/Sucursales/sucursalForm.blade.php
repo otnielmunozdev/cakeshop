@@ -48,7 +48,7 @@
 
             @csrf {{--valida que el formulario eeste dentro de la app , crea un token , si se quita la sesion expira--}}
                 <div class="form-group">
-                    <label class="form-label">Sucursal</label>
+                    <label class="form-label"><strong>Sucursal</strong></label>
                     <input type="text" class="form-control"  placeholder="Direcci&oacute;n de la Sucursal" value="{{$sucursale->direccion ?? ''}}{{ old('direccion') }}"name="direccion" >
                     @if ($errors->has('direccion'))
                         <span class="alert alert-danger" role="alert">
@@ -57,7 +57,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Horario</label>
+                    <label class="form-label"><strong>Horario</strong></label>
                     <input type="text" class="form-control"  placeholder="hh:mm AM - hh:mm PM" value="{{$sucursale->horario ?? ''}}{{ old('horario') }}"name="horario" >
                     @if ($errors->has('horario'))
                         <span class="alert alert-danger" role="alert">
@@ -66,16 +66,16 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Mapa</label>
+                    <label class="form-label"><strong>Mapa</strong></label>
                     <input type="text" class="form-control"  placeholder="URL del mapa de Google" value="{{$sucursale->mapa ?? ''}}{{ old('mapa') }}"name="mapa" >
                     @if ($errors->has('mapa'))
-                        <span class="alert alert-danger" role="alert">
+                        <span class="alert alert-danger " role="alert">
                             <strong>{{ $errors->first('mapa') }}</strong> 
                         </span>
                     @endif
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Tel&eacute;fono</label>
+                    <label class="form-label"><strong>Tel&eacute;fono</strong></label>
                     <input type="text" class="form-control"  placeholder="Tel&eacute;fono" value="{{$sucursale->telefono ?? ''}}{{ old('telefono') }}"name="telefono" >
                     @if ($errors->has('telefono'))
                         <span class="alert alert-danger" role="alert">
@@ -83,8 +83,8 @@
                         </span>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-primary block ">Enviar</button>
-                <button type="reset" class="btn btn-info block offset-8">Limpiar Campos</button>
+                <button type="submit" class="btn btn-primary block "><i class="fas fa-save"></i> Guardar</button>
+                <button type="reset" class="btn btn-info block offset-9"><i class="fas fa-minus"></i>  Limpiar Campos</button>
                 </div>
 
         </form>
