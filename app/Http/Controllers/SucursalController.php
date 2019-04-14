@@ -24,7 +24,7 @@ class SucursalController extends Controller
         //->where('id', '>' ,'1')
         //->where('envia','pedro');
  
-    dd($sucursales);
+    //dd($sucursales);
     //return $docs;
        // return view('Paginas.sucursales', compact('sucursales'));
         //->with(['docs'=> $docs]);
@@ -66,7 +66,10 @@ class SucursalController extends Controller
        $suc->mapa = $request->mapa;
        $suc->telefono = $request->telefono;
        $suc->save();
-       return redirect()->route('sucursales.index');//redirige a la ruta en el route list no de la vista
+       return redirect()->route('sucursales.index')->with([
+        'mensaje' => 'Creado Correctamente',
+        'alert-class' => 'alert-success'
+    ]);//redirige a la ruta en el route list no de la vista
    
     }
 
@@ -108,7 +111,10 @@ class SucursalController extends Controller
         $sucursale->mapa = $request->mapa;
         $sucursale->telefono = $request->telefono;
         $sucursale->save();
-        return redirect()->route('sucursales.show',$sucursale->id); //redirige a la ruta en el route list no de la vista 
+        return redirect()->route('sucursales.show',$sucursale->id)->with([
+            'mensaje' => 'Actualizado con Exito',
+            'alert-class' => 'alert-info'
+        ]); //redirige a la ruta en el route list no de la vista 
     }
 
     /**
@@ -120,6 +126,9 @@ class SucursalController extends Controller
     public function destroy(Sucursal $sucursale)
     {
         $sucursale->delete();//->onDelete('cascade');
-        return redirect()->route('sucursales.index');
+        return redirect()->route('sucursales.index')->with([
+            'mensaje' => 'La sucursal ha sido eliminada',
+            'alert-class' => 'alert-warning'
+        ]);
     }
 }

@@ -29,15 +29,9 @@
     
 </div>
   <div class="card-body">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+
+        @include('partials.formErrors')
+        
         <div class="col-md-8 offset-md-2 col-sm-12 ">
             @if (isset($sucursale))
                 <form action="{{ route('sucursales.update',$sucursale->id)}} " method="POST">{{--Para que lo enviae a la URL la info del formulario--}}

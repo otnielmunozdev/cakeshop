@@ -10,6 +10,8 @@
                 <li class="breadcrumb-item active">{{route('sucursales.show',$sucursale->id)}}</li>
         </ol>
 </div>
+
+@include('partials.mensajes')
 <div class="container">
 <div class="card">
 <div class="card-header">
