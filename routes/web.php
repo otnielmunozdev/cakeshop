@@ -20,11 +20,13 @@ Route::get('/inicioAdministrador', function () {
 });
 
 Route::get('/sucursalesGDL','SucursalController@mostrarSucursalVistaUsuario');
+Route::get('api/sucursales','SucursalController@mostrarSucursalAjax'); //datatables
 
 Route::get('/informacion', 'PaginasController@informacion');
 Route::get('/contacto', 'PaginasController@contacto');
 //Route::get('/sucursales', 'SucursalController@index')->name('sucursales.index');
 Route::resource('/sucursales','SucursalController');
+
 Route::get('/productos', 'PaginasController@productos');
 Route::get('/promociones', 'PaginasController@promociones');
 Route::get('/administrador', 'PaginasController@administrador');

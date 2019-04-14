@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sucursal;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class SucursalController extends Controller
 {
@@ -12,6 +13,7 @@ class SucursalController extends Controller
         $sucursales = Sucursal::all();
         return view('Paginas.sucursales', compact('sucursales'));
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +22,7 @@ class SucursalController extends Controller
     public function index()
     {
         // $sucursales = DB::table('sucursales')->get();
-        $sucursales = Sucursal::all(); //Documento::where() tambien se pueden utilizar select etc.
+       //$sucursales = Sucursal::all(); //Documento::where() tambien se pueden utilizar select etc.
         //->where('id', '>' ,'1')
         //->where('envia','pedro');
  
@@ -28,8 +30,26 @@ class SucursalController extends Controller
     //return $docs;
        // return view('Paginas.sucursales', compact('sucursales'));
         //->with(['docs'=> $docs]);
-        return view('Sucursales.sucursalIndex',compact('sucursales')); //'carpeta','nombrevista'
+        //return view('Sucursales.sucursalIndex',compact('sucursales')); //'carpeta','nombrevista'
+        //return Datatables::eloquent(App\Sucursal::query())->make(true);
+       // return datatables()->eloquent(Sucursal::query())->make(true);
+       return view('Sucursales.sucursalIndex');
+        
+    }
     
+    public function mostrarSucursalAjax()
+    {
+       // return datatables()->eloquent(Sucursal::query())->make(true);
+       $sucursales = Sucursal::select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
+
+        return Datatables::of($sucursales)
+            ->addColumn('action', function ($sucursales) {
+                return '<a href="sucursales/'.$sucursales->id.' " class="btn btn-info btn-sm"><i class="fas fa-exclamation"></i> Detalles</a>';
+            })
+            ->editColumn('id', 'ID: {{$id}}')
+            ->removeColumn('password')
+            ->make(true);
+        
     }
 
     /**

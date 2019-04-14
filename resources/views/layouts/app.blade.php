@@ -16,6 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Margarine|Oswald|Srisakdi|Sniglet|Pacifico|Nunito" rel="stylesheet"> 
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/logo2.png') }}">
@@ -124,5 +125,6 @@
                 @yield('content') <!--aqui inicia la seccion -->
         </main>
     </div>
+    
 </body>
 </html>

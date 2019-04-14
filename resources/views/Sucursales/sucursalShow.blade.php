@@ -16,6 +16,7 @@
 <div class="card">
 <div class="card-header">
 <h3 class="card-title">Detalle de Sucursal n&uacute;mero: {{$sucursale->id}}</h3>
+<a href="{{route('sucursales.index') }}" class="btn btn-info btn-sm"><i class="fas fa-fill"></i> Regresar</a>  
 </div>
     <div class="row">
         <div class="col-md-10 offset-md-1">
@@ -56,6 +57,9 @@
     </div>
 </div>
 </div>
+
 </div>
+
+
 
 @endsection

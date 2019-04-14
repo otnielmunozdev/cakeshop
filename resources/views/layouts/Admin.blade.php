@@ -19,6 +19,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   
 
 </head>
@@ -66,6 +67,26 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{asset('js/sb-admin.min.js')}}"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  {{--<script>
+      $(document).ready( function () {
+        $('#sucursalesTable').DataTable({
+          "processing": true,
+          "serverSide": true,
+          "ajax": "/api/sucursales",
+          "columns":[
+              {data: 'id'},
+              {data: 'direccion'},
+              {data: 'horario'},
+              {data: 'mapa'},
+              {data: 'telefono'},
+          ]
+      
+        });
+    } );
+      </script>--}}
+      @include('Sucursales.sucursalIndexAJAX')
+
 
 
 </body>

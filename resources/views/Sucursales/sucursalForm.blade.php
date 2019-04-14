@@ -26,6 +26,7 @@
         @else
         <h3 class="card-title">Capturar Sucursal</h3> 
         @endif
+        <a href="{{route('sucursales.index') }}" class="btn btn-dark btn-sm "><i class="fas fa-fill"></i> Lista de Sucursales</a> 
     
 </div>
   <div class="card-body">
