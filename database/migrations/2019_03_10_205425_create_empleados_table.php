@@ -20,8 +20,8 @@ class CreateEmpleadosTable extends Migration
             $table->string('apellido');
             $table->string('correo')->unique();
             $table->date('fecha_nac');
-            $table->char('telefono','10');
-            $table->string('tipo_puesto');
+            $table->char('telefono','15');
+            $table->string('rol');
             $table->foreign('sucursal_id')->references('id')->on('sucursales');
 
             $table->timestamps();

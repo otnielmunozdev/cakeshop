@@ -18,7 +18,6 @@ class CreateProductosTable extends Migration
            // $table->unsignedInteger('cliente_id');
             $table->string('nombre');
             $table->string('tipo_producto');
-            $table->string('tamano');
             $table->integer('precio');
             $table->text('descripcion');
 

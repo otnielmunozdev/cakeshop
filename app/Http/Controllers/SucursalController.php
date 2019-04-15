@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sucursal;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use Yajra\Datatables\Datatables;
 
 class SucursalController extends Controller
@@ -40,7 +40,7 @@ class SucursalController extends Controller
     public function mostrarSucursalAjax()
     {
        // return datatables()->eloquent(Sucursal::query())->make(true);
-       $sucursales = Sucursal::select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
+       $sucursales = Sucursal::all();//select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
 
         return Datatables::of($sucursales)
             ->addColumn('action', function ($sucursales) {

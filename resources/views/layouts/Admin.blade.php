@@ -85,7 +85,9 @@
         });
     } );
       </script>--}}
+      @include('Empleados.empleadoIndexAJAX')
       @include('Sucursales.sucursalIndexAJAX')
+
 
 
 

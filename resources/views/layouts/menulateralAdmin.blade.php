@@ -27,10 +27,10 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Operaciones CRUD:</h6>
-          <a class="dropdown-item" href="{{--route('/')--}}">Crear</a>
-          <a class="dropdown-item" href="{{--route('/')--}}">Mostrar</a>
-          <a class="dropdown-item" href="{{--route('/')--}}">Editar</a>
-          <a class="dropdown-item" href="{{--route('/')--}}">Eliminar</a>
+          <a class="dropdown-item" href="{{route('empleados.create')}}">Crear</a>
+          <a class="dropdown-item" href="{{route('empleados.index')}}">Mostrar</a>
+          <a class="dropdown-item" href="{{route('empleados.index')}}">Editar</a>
+          <a class="dropdown-item" href="{{route('empleados.index')}}">Eliminar</a>
         </div>
       </li>
 
