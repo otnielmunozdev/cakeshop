@@ -2,7 +2,10 @@
 
 @section('content')
 
-<h1>contactp</h1>
+<h1>Contacto</h1>
+
+
+
   <footer class="">
     @include('layouts.footer')
   </footer>
