@@ -27,6 +27,7 @@
         @else
         <h3 class="card-title">Capturar Empleado</h3> 
         @endif
+        <a href="{{route('empleados.index') }}" class="btn btn-dark btn-sm "><i class="fas fa-fill"></i> Lista de empleados</a> 
         
     
 </div>
@@ -35,6 +36,7 @@
         @include('partials.formErrors')
         
         <div class="col-md-8 offset-md-2 col-sm-12 ">
+            
 
             @if (isset($empleado))
                 <form action="{{ route('empleados.update',$empleado->id)}} " method="POST">{{--Para que lo enviae a la URL la info del formulario--}}
@@ -42,6 +44,7 @@
             @else
                 <form action="{{ route('empleados.store')}} " method="POST">{{--Para que lo enviae a la URL la info del formulario--}}  
             @endif
+            
     
             @csrf {{--valida que el formulario eeste dentro de la app , crea un token , si se quita la sesion expira--}}
                 <div class="form-group">

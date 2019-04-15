@@ -29,6 +29,10 @@ Route::resource('/sucursales','SucursalController');
 Route::resource('/empleados','EmpleadoController');
 Route::get('api/empleados','EmpleadoController@mostrarEmpleadoAjax'); //datatables 
 
+
+Route::resource('/producto','ProductoController');
+
+
 Route::get('/productos', 'PaginasController@productos');
 Route::get('/promociones', 'PaginasController@promociones');
 Route::get('/administrador', 'PaginasController@administrador');
