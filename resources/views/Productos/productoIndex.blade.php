@@ -34,6 +34,7 @@
                         <th scope="col">Tipo del Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Descripcion</th>
+                        <th scope="col">Imagen</th>
                     </thead>
                     <tbody>
                        @foreach ($producto as $prod)
@@ -46,6 +47,7 @@
                                 <td>{{$prod->tipo_producto}}</td>
                                 <td>{{$prod->precio}}</td>
                                 <td>{{$prod->descripcion}}</td>
+                                <td>{{$prod->imagen}}</td>
                                 
                             </tr>
                         @endforeach

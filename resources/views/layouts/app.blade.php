@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Margarine|Oswald|Srisakdi|Sniglet|Pacifico|Nunito" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Margarine|Oswald|Srisakdi|Sniglet|Pacifico|Nunito|Indie+Flower|Lobster" rel="stylesheet"> 
 
 
     <!-- Styles -->
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/promociones.css') }}">
     <link rel="stylesheet" href="{{ asset('css/informacion.css') }}">
     <link rel="stylesheet" href="{{ asset('css/appmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/productos.css') }}">
 </head>
 
 
@@ -63,11 +64,11 @@
                             Productos
                             </a>      
                             <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Pasteles</a>
-                                <a class="dropdown-item" href="#">Galletas</a>
-                                <a class="dropdown-item" href="#">Muffins</a>
-                                <a class="dropdown-item" href="#">Pays</a>
-                                <a class="dropdown-item" href="#">Gelatinas</a>   
+                                <a class="dropdown-item" href="{{ action('ProductoController@mostrarPastelesVistaUsuario') }}">Pasteles</a>
+                                <a class="dropdown-item" href="{{ action('ProductoController@mostrarGalletasVistaUsuario') }}">Galletas</a>
+                                <a class="dropdown-item" href="{{ action('ProductoController@mostrarMuffinsVistaUsuario') }}">Muffins</a>
+                                <a class="dropdown-item" href="{{ action('ProductoController@mostrarPaysVistaUsuario') }}">Pays</a>
+                                <a class="dropdown-item" href="{{ action('ProductoController@mostrarGelatinasVistaUsuario') }}">Gelatinas</a>   
                             </div>
                         </li>
                         <li>

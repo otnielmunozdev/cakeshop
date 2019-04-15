@@ -20,6 +20,7 @@ class CreateProductosTable extends Migration
             $table->string('tipo_producto');
             $table->integer('precio');
             $table->text('descripcion');
+            $table->string('imagen');
 
             //$table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();

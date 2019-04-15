@@ -8,6 +8,42 @@ use Yajra\Datatables\Datatables;
 
 class ProductoController extends Controller
 {
+
+    public function mostrarPastelesVistaUsuario()
+    {
+        $pasteles = Producto::all()->where('tipo_producto', 'Pastel' );
+       // dd($pasteles);
+        return view('Productos.productosPasteles',compact('pasteles'));
+    }
+
+    public function mostrarGalletasVistaUsuario()
+    {
+        $galletas = Producto::all()->where('tipo_producto', 'Galleta' );
+       // dd($pasteles);
+        return view('Productos.productosGalletas',compact('galletas'));
+    }
+
+    
+    public function mostrarMuffinsVistaUsuario()
+    {
+        $muffins = Producto::all()->where('tipo_producto', 'Muffin' );
+       // dd($pasteles);
+        return view('Productos.productosMuffins',compact('muffins'));
+    }
+
+    public function mostrarPaysVistaUsuario()
+    {
+        $pays = Producto::all()->where('tipo_producto', 'Pay' );
+       // dd($pasteles);
+        return view('Productos.productosPays',compact('pays'));
+    }
+
+    public function mostrarGelatinasVistaUsuario()
+    {
+        $gelatinas = Producto::all()->where('tipo_producto', 'Gelatina' );
+       // dd($pasteles);
+        return view('Productos.productosGelatinas',compact('gelatinas'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +78,14 @@ class ProductoController extends Controller
             'tipo_producto' => 'required',
             'precio' => 'required',
             'descripcion' => 'required',
+            'imagen' => 'required|file',
         ]);
+
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/', $name);
+        }
         
     
            $produc = new Producto();
@@ -50,6 +93,7 @@ class ProductoController extends Controller
            $produc->tipo_producto = $request->tipo_producto; //es lo mismo
            $produc->precio = $request->precio;
            $produc->descripcion = $request->descripcion;
+           $produc->imagen = $name;
            $produc->save();
            return redirect()->route('producto.index')->with([
             'mensaje' => 'Creado Correctamente',
@@ -89,10 +133,17 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $name = time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/', $name);
+        }
+
         $producto->nombre = $request->input('nombre');//trae la informacion del formualrio del campo llamado dependencia
            $producto->tipo_producto = $request->tipo_producto; //es lo mismo
            $producto->precio = $request->precio;
            $producto->descripcion = $request->descripcion;
+           $producto->imagen = $name;
         $producto->save();
         return redirect()->route('producto.show',$producto->id)->with([
             'mensaje' => 'Actualizado con Exito',

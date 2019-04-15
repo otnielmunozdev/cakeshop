@@ -91,7 +91,7 @@
                 background-color:rgba(0, 0, 0, 0.6); 
                 background-size: cover;
                 min-height:100vh;
-                padding:0;
+                padding:0px;
                 margin:0;
             }
 

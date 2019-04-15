@@ -1,0 +1,32 @@
+ #productosTitulo{
+     font-family: 'Indie Flower';
+     color:rgba(73, 48, 31);
+     font-size: 50px;
+ }
+
+#titulopastel{
+    font-family: 'Lobster';
+    font-size: 20px;
+    color: rgb(87, 51, 27);
+}
+
+#descripcion{
+    font-family: 'Pacifico';
+    font-size: 20px;
+    color: rgb(87, 51, 27);
+}
+
+#contenedor{
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+#tarjeta{
+   
+}
+
+#fondo{
+    background-color: rgba(54, 21, 8, 0.671);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}

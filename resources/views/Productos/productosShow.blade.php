@@ -28,6 +28,7 @@
                             <th scope="col">Tipo del Producto</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Descripcion</th>
+                            <th scope="col">Imagen</th>
                             <th scope="col" colspan="6">Acciones</th> 
                     </thead>
                     <tbody>
@@ -37,6 +38,7 @@
                                     <td>{{$producto->tipo_producto}}</td>
                                     <td>{{$producto->precio}}</td>
                                     <td >{{$producto->descripcion}}</td>
+                                    <td >{{$producto->imagen}}</td>
                             <td >
                             <a href="{{route('producto.edit',$producto->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>    
                             </td>

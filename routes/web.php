@@ -31,6 +31,11 @@ Route::get('api/empleados','EmpleadoController@mostrarEmpleadoAjax'); //datatabl
 
 
 Route::resource('/producto','ProductoController');
+Route::get('/pasteles','ProductoController@mostrarPastelesVistaUsuario');
+Route::get('/galletas','ProductoController@mostrarGalletasVistaUsuario');
+Route::get('/muffins','ProductoController@mostrarMuffinsVistaUsuario');
+Route::get('/pays','ProductoController@mostrarPaysVistaUsuario');
+Route::get('/gelatinas','ProductoController@mostrarGelatinasVistaUsuario');
 
 
 Route::get('/productos', 'PaginasController@productos');

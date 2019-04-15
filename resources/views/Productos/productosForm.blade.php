@@ -40,10 +40,10 @@
 
             
                 @if (isset($producto))
-                <form action="{{ route('producto.update',$producto->id)}} " method="POST">{{--Para que lo enviae a la URL la info del formulario--}}
+                <form action="{{ route('producto.update',$producto->id)}} " method="POST" enctype="multipart/form-data">{{--Para que lo enviae a la URL la info del formulario--}}
                 <input type="hidden" name="_method" value="PATCH">{{--cuando se remplaza algunas columnas del registro en la BD/ PUT remplaza todo--}}
                 @else
-                <form action="{{ route('producto.store')}} " method="POST">{{--Para que lo enviae a la URL la info del formulario--}}  
+                <form action="{{ route('producto.store')}} " method="POST" enctype="multipart/form-data">{{--Para que lo enviae a la URL la info del formulario--}}  
                @endif
 
             @csrf {{--valida que el formulario eeste dentro de la app , crea un token , si se quita la sesion expira--}}
@@ -84,6 +84,16 @@
                         @if ($errors->has('descripcion'))
                         <span class="alert alert-danger" role="alert">
                             <strong>{{ $errors->first('descripcion') }}</strong> 
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                        <label class="form-label"><strong>Imagen del Producto</strong></label><br>
+                        <input type="file" name="imagen" id="" value="{{$producto->imagen ?? ''}}{{ old('imagen') }}">
+                        @if ($errors->has('imagen'))
+                        <span class="alert alert-danger" role="alert">
+                            <strong>{{ $errors->first('imagen') }}</strong> 
                         </span>
                     @endif
                 </div>
