@@ -87,6 +87,7 @@
       </script>--}}
       @include('Empleados.empleadoIndexAJAX')
       @include('Sucursales.sucursalIndexAJAX')
+      @include('Users.userIndexAJAX')
 
 
 

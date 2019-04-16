@@ -37,6 +37,9 @@ Route::get('/muffins','ProductoController@mostrarMuffinsVistaUsuario');
 Route::get('/pays','ProductoController@mostrarPaysVistaUsuario');
 Route::get('/gelatinas','ProductoController@mostrarGelatinasVistaUsuario');
 
+Route::resource('/user','UserController');
+Route::get('api/user','UserController@mostrarUsuariosAjax'); //datatables 
+
 
 Route::get('/productos', 'PaginasController@productos');
 Route::get('/promociones', 'PaginasController@promociones');

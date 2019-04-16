@@ -55,27 +55,13 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
               <h6 class="dropdown-header">Operaciones CRUD:</h6>
-              <a class="dropdown-item" href="{{--route('/')--}}">Crear</a>
-              <a class="dropdown-item" href="{{--route('/')--}}">Mostrar</a>
-              <a class="dropdown-item" href="{{--route('/')--}}">Editar</a>
-              <a class="dropdown-item" href="{{--route('/')--}}">Eliminar</a>
+              <a class="dropdown-item" href="{{route('user.create')}}">Crear</a>
+              <a class="dropdown-item" href="{{route('user.index')}}">Mostrar</a>
+              <a class="dropdown-item" href="{{route('user.index')}}">Editar</a>
+              <a class="dropdown-item" href="{{route('user.index')}}">Eliminar</a>
             </div>
           </li>
 
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                {{--<span>Cuentas</span>--}}
-                <span>Ventas</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Operaciones CRUD:</h6>
-                <a class="dropdown-item" href="{{--route('/')--}}">Crear</a>
-                <a class="dropdown-item" href="{{--route('/')--}}">Mostrar</a>
-                <a class="dropdown-item" href="{{--route('/')--}}">Editar</a>
-                <a class="dropdown-item" href="{{--route('/')--}}">Eliminar</a>
-              </div>
-            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

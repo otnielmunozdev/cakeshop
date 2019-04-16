@@ -28,7 +28,7 @@ class LoginController extends Controller
       session(['apodo'=>\Auth::user()->nombre]);
       return '/home';
     }
-    /**
+    /** 
      * Create a new controller instance.
      *
      * @return void
