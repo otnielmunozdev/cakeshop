@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/informacion.css') }}">
     <link rel="stylesheet" href="{{ asset('css/appmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('css/productos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contacto.css') }}">
 </head>
 
 

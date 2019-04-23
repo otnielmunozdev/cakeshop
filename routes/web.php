@@ -40,6 +40,8 @@ Route::get('/gelatinas','ProductoController@mostrarGelatinasVistaUsuario');
 Route::resource('/user','UserController');
 Route::get('api/user','UserController@mostrarUsuariosAjax'); //datatables 
 
+Route::resource('/mail', 'MailController');
+
 
 Route::get('/productos', 'PaginasController@productos');
 Route::get('/promociones', 'PaginasController@promociones');
