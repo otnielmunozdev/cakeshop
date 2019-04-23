@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('empleados/login', 'EmpleadoController@showloginForm');//login de empleados
+Route::post('empleados/login', 'EmpleadoController@login');
+
 Route::get('/inicioAdministrador', function () {
     return view('inicioAdministrador');
 });
@@ -40,7 +43,7 @@ Route::get('/gelatinas','ProductoController@mostrarGelatinasVistaUsuario');
 Route::resource('/user','UserController');
 Route::get('api/user','UserController@mostrarUsuariosAjax'); //datatables 
 
-Route::resource('/mail', 'MailController');
+Route::resource('/mail', 'MailController'); //correos de contacto
 
 
 Route::get('/productos', 'PaginasController@productos');

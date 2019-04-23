@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'empleados' => [
+            'driver' => 'session',
+            'provider' => 'empleados',
+        ]
     ],
 
     /*
@@ -70,6 +75,11 @@ return [
             'model' => App\User::class,
         ],
 
+        'empleados' => [
+            'driver' => 'eloquent',
+            'model' => App\Empleado::class
+        ]
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -94,6 +104,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'empleados' => [
+            'provider' => 'empleados',
             'table' => 'password_resets',
             'expire' => 60,
         ],

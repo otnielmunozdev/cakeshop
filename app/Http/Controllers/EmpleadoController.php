@@ -7,9 +7,27 @@ use App\Sucursal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class EmpleadoController extends Controller
 {
+    use AuthenticatesUsers;
+
+
+    public function showloginForm()
+    {
+       
+        return view('administrators.login');
+    }
+
+    
+
+    public function authenticated(){
+        return redirect('inicioAdministrador');
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -68,17 +86,22 @@ class EmpleadoController extends Controller
             'fecha_nac' => 'required|date',
             'telefono' => 'required|min:10|max:15',
             'rol' => 'required',
+            'password' => 'required',
             'sucursal_id' => 'required',
+            
         ]);
+        
 
         $empleado = new Empleado;
         //$documento->user_id = Auth::id(); //recupera la info del usuario $request->user()->id;
+        
         $empleado->sucursal_id = $request->sucursal_id; //user()->id;
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
         $empleado->correo = $request->correo;
         $empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
+        $empleado->password = Hash::make($request['password']);
         $empleado->rol = $request->rol;
         $empleado->save();
         return redirect()->route('empleados.index')->with([
@@ -127,6 +150,7 @@ class EmpleadoController extends Controller
         $empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
         $empleado->rol = $request->rol;
+        $empleado->password = Hash::make($request['password']);
         $empleado->save();
         return redirect()->route('empleados.show',$empleado->id)->with([
             'mensaje' => 'Actualizado con Exito',

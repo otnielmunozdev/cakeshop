@@ -22,6 +22,7 @@ class CreateEmpleadosTable extends Migration
             $table->date('fecha_nac');
             $table->char('telefono','15');
             $table->string('rol');
+            $table->string('password');
             $table->foreign('sucursal_id')->references('id')->on('sucursales')->onDelete('cascade');
 
             $table->timestamps();

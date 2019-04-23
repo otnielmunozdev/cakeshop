@@ -109,6 +109,16 @@
                 </div>
 
                 <div class="form-group">
+                        <label class="form-label"><strong>Password (Para ingresar al sistema dentro de la empresa)</strong></label>
+                        <input type="password" class="form-control"  placeholder="Password" value="{{$empleado->password ?? ''}}{{ old('password') }}"name="password" >
+                        @if ($errors->has('password'))
+                        <span class="alert alert-danger" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong> 
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group">
                         <label class="form-label">Sucursal en la que trabajara</label>
                         <select name="sucursal_id" class="form-control" id="">
                             @foreach ($sucursales as $sucur)

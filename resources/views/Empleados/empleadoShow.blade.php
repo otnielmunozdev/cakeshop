@@ -32,6 +32,7 @@
                         <th scope="col">Fecha de Nacimiento</th>
                         <th scope="col">Tel&eacute;fono</th>
                         <th scope="col">Rol</th>
+                        <th scope="col">Password</th>
                         <th scope="col">Acciones</th> 
                     </thead>
                     <tbody>
@@ -44,6 +45,7 @@
                                 <td>{{$empleado->fecha_nac}}</td>
                                 <td>{{$empleado->telefono}}</td>
                                 <td>{{$empleado->rol}}</td>
+                                <td>{{$empleado->password}}</td>
                             <td >
                             <a href="{{route('empleados.edit',$empleado->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>    
                             </td>
