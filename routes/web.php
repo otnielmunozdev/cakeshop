@@ -43,6 +43,10 @@ Route::get('/gelatinas','ProductoController@mostrarGelatinasVistaUsuario');
 Route::resource('/user','UserController');
 Route::get('api/user','UserController@mostrarUsuariosAjax'); //datatables 
 
+Route::resource('/pedidos','PedidoController');
+
+Route::post('pedidos/elimina-producto/{pedido}', 'PedidoController@eliminaProducto')->name('pedidos.eliminaProducto');
+
 Route::resource('/mail', 'MailController'); //correos de contacto
 
 
