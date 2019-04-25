@@ -11,7 +11,7 @@
 <div class="card">  
         <div class="card-header text-right">              
                 <h3 class="card-title text-left">Datos Personales</h3> 
-                <a href="{{route('sucursales.index') }}" class="btn btn-dark btn-sm "><i class="fas fa-fill"></i> Pedidos </a> 
+                <a href="{{route('pedidosUser.create') }}" class="btn btn-dark btn-sm "><i class="fas fa-fill"></i> Pedidos </a> 
             
         </div>
           <div class="card-body">

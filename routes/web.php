@@ -47,6 +47,9 @@ Route::resource('/pedidos','PedidoController');
 
 Route::post('pedidos/elimina-producto/{pedido}', 'PedidoController@eliminaProducto')->name('pedidos.eliminaProducto');
 
+Route::resource('/pedidosUser', 'PedidoUsuarioController');
+Route::get('/pedidoUserLista', 'PedidoUsuarioController@mostrarPedidos');
+
 Route::resource('/mail', 'MailController'); //correos de contacto
 
 

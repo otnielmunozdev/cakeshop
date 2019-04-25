@@ -122,6 +122,7 @@ class PedidoController extends Controller
      */
     public function show(Pedido $pedido)
     {
+       // dd($pedido);
         return view('Pedidos.pedidoShow', compact('pedido'));
     }
 

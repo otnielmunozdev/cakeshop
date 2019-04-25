@@ -45,7 +45,7 @@
                                   <label class="form-label">Usuario de asignacion al pedido</label>
                                   <select name="user_id" class="form-control">
                                     @foreach($usuarios as $usuario)
-                                        <option value="{{ $usuario->id }}">{{ $usuario->apellido }}-{{ $usuario->nombre }}-{{ $usuario->email }}</option>
+                                        <option value="{{ $usuario->id }}"{{ isset($pedido) && $pedido->user_id == $usuario->id ? 'selected' : '' }}>{{ $usuario->apellido }}-{{ $usuario->nombre }}-{{ $usuario->email }}</option>
                                     @endforeach
                                   </select>
                                 </div>

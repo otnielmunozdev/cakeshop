@@ -1,22 +1,22 @@
-@extends('layouts.Admin')
-
+@extends('layouts.UserCount')
 @section('contenido')
 
-<div class="page-header">
-        <ol class="breadcrumb">
+<div class="page-header ">
+        <ol class="breadcrumb ">
                 <li class="breadcrumb-item">
-                <a href="{{url('inicioAdministrador')}}">Dashboard</a>
+                <a href="{{route('pedidosUser.create')}}">Crea otro pedido</a>
                 </li>
-                <li class="breadcrumb-item active">{{route('pedidos.show',$pedido->id)}}</li>
+                <li class="breadcrumb-item active">!Pide tu pedido ahora mismo!</li>
         </ol>
 </div>
+
 
 @include('partials.mensajes')
 <div class="container">
 <div class="card">
 <div class="card-header">
 <h3 class="card-title">Detalle del pedido n&uacute;mero: {{$pedido->id}}</h3>
-<a href="{{route('pedidos.index') }}" class="btn btn-info btn-sm"><i class="fas fa-fill"></i> Regresar</a>  
+<a href="{{route('pedidosUser.index') }}" class="btn btn-info btn-sm"><i class="fas fa-fill"></i> Regresar</a>  
 </div>
     <div class="row">
         <div class="col-md-10 offset-md-1">
@@ -36,10 +36,10 @@
                                 <td>{{$pedido->fecha_solicitado}}</td>
                                 <td>{{$pedido->fecha_entrega}}</td>
                             <td >
-                            <a href="{{route('pedidos.edit',$pedido->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>    
-                            </td> 
+                            <a href="" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>    
+                            </td>
                             <td>
-                                <form action="{{route('pedidos.destroy',$pedido->id)}}" method="POST">
+                                <form action="" method="POST">
                                 @csrf
                                     <input type="hidden" name="_method" value="DELETE">  {{--se manda un input oculto para que laravel sepa que hacer DELETE / PUT / PATCH--}}
                                     <button  class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Borrar</button>
@@ -58,11 +58,11 @@
                                 <tr>
                                     <td>{{ $producto->nombre }}</td>
                                     <td>
-                                        <form action="{{ route('pedidos.eliminaProducto', $pedido->id) }}" method="POST">
+                                       {{-- <form action="{{ route('pedidos.eliminaProducto', $pedido->id) }}" method="POST">
                                             <input type="hidden" name="producto_id" value="{{ $producto->id }}">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
-                                        </form>
+                                        </form>--}}
                                     </td>
                                 </tr>
                                 @endforeach
@@ -77,7 +77,5 @@
 </div>
 
 </div>
-
-
 
 @endsection
