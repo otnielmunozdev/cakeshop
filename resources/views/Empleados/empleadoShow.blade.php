@@ -41,7 +41,7 @@
                                 <td>{{$empleado->sucursal_id}}</td>
                                 <td>{{$empleado->nombre}}</td>
                                 <td>{{$empleado->apellido}}</td>
-                                <td>{{$empleado->correo}}</td>
+                                <td>{{$empleado->email}}</td>
                                 <td>{{$empleado->fecha_nac}}</td>
                                 <td>{{$empleado->telefono}}</td>
                                 <td>{{$empleado->rol}}</td>

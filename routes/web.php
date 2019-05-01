@@ -19,8 +19,10 @@ Route::get('empleados/login', 'EmpleadoController@showloginForm');//login de emp
 Route::post('empleados/login', 'EmpleadoController@login');
 
 Route::get('/inicioAdministrador', function () {
-    return view('inicioAdministrador');
+    return view('inicioAdministrador');//->middleware('empleados');
 });
+
+//Route::get('/inicioAdministrador','empleados-home')->middleware('empleados');
 
 Route::get('/sucursalesGDL','SucursalController@mostrarSucursalVistaUsuario');
 Route::get('api/sucursales','SucursalController@mostrarSucursalAjax'); //datatables
@@ -47,8 +49,8 @@ Route::resource('/pedidos','PedidoController');
 
 Route::post('pedidos/elimina-producto/{pedido}', 'PedidoController@eliminaProducto')->name('pedidos.eliminaProducto');
 
-Route::resource('/pedidosUser', 'PedidoUsuarioController');
-Route::get('/pedidoUserLista', 'PedidoUsuarioController@mostrarPedidos');
+Route::resource('/pedidosUser', 'PedidoUsuarioController')->middleware('auth');
+Route::get('/pedidoUserLista', 'PedidoUsuarioController@mostrarPedidos')->middleware('auth');
 
 Route::resource('/mail', 'MailController'); //correos de contacto
 
@@ -62,10 +64,32 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Route::get('/empleado', 'EmpleadoLoginController@login')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
 
-Auth::routes();
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=> 'empleados'], function() {
+
+    // Login Routes...
+        Route::get('login', ['as' => 'empleado.login', 'uses' => 'EmpleadoAuth\LoginController@showLoginForm']); 
+        Route::post('login', ['uses' => 'EmpleadoAuth\LoginController@login']);
+        Route::post('logout', ['as' => 'empleado.logout', 'uses' => 'EmpleadoAuth\LoginController@logout']);
+    
+    // Registration Routes esto no lo necesito
+        Route::get('register', ['as' => 'empleado.register', 'uses' => 'EmpleadoAuth\RegisterController@showRegistrationForm']);
+        Route::post('register', ['uses' => 'EmpleadoAuth\RegisterController@register']);
+    
+    // Password Reset Routes...
+        Route::get('password/reset', ['as' => 'empleado.password.reset', 'uses' => 'EmpleadoAuth\ForgotPasswordController@showLinkRequestForm']);
+        Route::post('password/email', ['as' => 'empleado.password.email', 'uses' => 'EmpleadoAuth\ForgotPasswordController@sendResetLinkEmail']);
+        Route::get('password/reset/{token}', ['as' => 'empleado.password.reset.token', 'uses' => 'EmpleadoAuth\ResetPasswordController@showResetForm']);
+        Route::post('password/reset', ['uses' => 'EmpleadoAuth\ResetPasswordController@reset']);
+    });
+
+    //Route::get('/inicioAdministrador','empleado-home')->middleware('empleados');

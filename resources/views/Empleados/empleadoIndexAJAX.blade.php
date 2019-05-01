@@ -9,7 +9,7 @@
           {data: 'sucursal_id', name: 'sucursal_id'},
           {data: 'nombre', name: 'nombre'},
           {data: 'apellido', name: 'apellido'},
-          {data: 'correo', name: 'correo'},
+          {data: 'email', name: 'email'},
           {data: 'fecha_nac', name: 'fecha_nac'},
           {data: 'telefono', name: 'telefono'},
           {data: 'rol', name: 'rol'},

@@ -14,9 +14,24 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class EmpleadoController extends Controller
 {
     use AuthenticatesUsers;
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+       // $this->middleware('auth');
+    }
+
+    public function login()
+    {
+        return view('inicioAdministrador');
+    }
 
 
-    public function showloginForm()
+
+   /* public function showloginForm()
     {
        
         return view('administrators.login');
@@ -26,7 +41,7 @@ class EmpleadoController extends Controller
 
     public function authenticated(){
         return redirect('inicioAdministrador');
-    }
+    }*/
 
 
     /**
@@ -82,7 +97,7 @@ class EmpleadoController extends Controller
         $request->validate([
             'nombre' => 'required',
             'apellido' => 'required',
-            'correo' => 'required|email',
+            'email' => ['required', 'email', 'unique:empleados'],
             'fecha_nac' => 'required|date',
             'telefono' => 'required|min:10|max:15',
             'rol' => 'required',
@@ -98,10 +113,10 @@ class EmpleadoController extends Controller
         $empleado->sucursal_id = $request->sucursal_id; //user()->id;
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
-        $empleado->correo = $request->correo;
+        $empleado->email = $request->email;
         $empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
-        $empleado->password = Hash::make($request['password']);
+        $empleado->password = Hash::make($request['password']); 
         $empleado->rol = $request->rol;
         $empleado->save();
         return redirect()->route('empleados.index')->with([
@@ -146,7 +161,7 @@ class EmpleadoController extends Controller
         $empleado->sucursal_id = $request->sucursal_id; //user()->id;
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
-        $empleado->correo = $request->correo;
+        $empleado->email = $request->email;
         $empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
         $empleado->rol = $request->rol;

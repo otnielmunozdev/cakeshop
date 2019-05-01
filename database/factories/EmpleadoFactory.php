@@ -9,7 +9,7 @@ $factory->define(App\Empleado::class, function (Faker $faker) {
             'sucursal_id' => '1',
             'nombre' => $faker->name,
             'apellido' => $faker->lastname,
-            'correo' => $faker->unique()->safeEmail,
+            'email' => $faker->unique()->safeEmail,
             'fecha_nac' => $faker->date,
             'telefono' => $faker->numberBetween($min = 1000000000, $max = 9000000000),
             'rol' =>  $faker->sentence(1),

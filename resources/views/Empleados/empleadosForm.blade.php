@@ -71,10 +71,10 @@
 
                 <div class="form-group">
                         <label class="form-label"><strong>Correo El&eacute;ctronico</strong></label>
-                        <input type="text" class="form-control"  placeholder="Correo del empleado" value="{{$empleado->correo ?? ''}}{{ old('correo') }}"name="correo" >
-                        @if ($errors->has('correo'))
+                        <input type="text" class="form-control"  placeholder="Correo del empleado" value="{{$empleado->email ?? ''}}{{ old('email') }}"name="email" >
+                        @if ($errors->has('email'))
                         <span class="alert alert-danger" role="alert">
-                            <strong>{{ $errors->first('correo') }}</strong> 
+                            <strong>{{ $errors->first('email') }}</strong> 
                         </span>
                     @endif
                 </div>

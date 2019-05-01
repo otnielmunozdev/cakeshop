@@ -18,7 +18,7 @@ class CreateEmpleadosTable extends Migration
             $table->unsignedInteger('sucursal_id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('correo')->unique();
+            $table->string('email')->unique();
             $table->date('fecha_nac');
             $table->char('telefono','15');
             $table->string('rol');
