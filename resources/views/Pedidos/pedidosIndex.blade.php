@@ -55,18 +55,18 @@
                                                     <td>{{$ped->fecha_solicitado}} </td>
                                                     <td>{{$ped->fecha_entrega}} </td>
                                                     <td>
-                                                        <ul>
+                                                        <ol type="a">
                                                             @foreach($ped->productos as $produc)
                                                                 <li>{{ $produc->id }}</li>                      
                                                             @endforeach
-                                                        </ul>
+                                                        </ol>
                                                     </td>
                                                     <td>
-                                                            <ul>
+                                                            <ol  type="a">
                                                                     @foreach($ped->productos as $produc)
                                                                         <li>{{ $produc->nombre }}</li>
                                                                     @endforeach
-                                                                </ul>
+                                                            </ol>
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('pedidos.edit',$ped->id)}}" class="btn btn-sm btn-warning">
