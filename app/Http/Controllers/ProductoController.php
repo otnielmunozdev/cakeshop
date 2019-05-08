@@ -11,7 +11,7 @@ class ProductoController extends Controller
 
     public function mostrarPastelesVistaUsuario()
     {
-        $pasteles = Producto::all()->where('tipo_producto', 'Pastel' );
+        $pasteles = Producto::all()->where('tipo_producto', 'Pastel' );//::paginate(3)
        // dd($pasteles);
         return view('Productos.productosPasteles',compact('pasteles'));
     }
@@ -51,7 +51,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $producto = Producto::all();
+        $producto = Producto::paginate(3);
         return view('Productos.productoIndex', compact('producto'));
     }
     

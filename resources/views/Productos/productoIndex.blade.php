@@ -53,6 +53,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$producto->links()}}
             </div>
             </div>
             </div>

@@ -17,7 +17,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedido = Pedido::with(['productos'],['users'])->get();//all();
+        $pedido = Pedido::with(['productos'],['users'])->paginate(3);//all();
         //Realiza una consulta de los documentos del usuario logeado
         //$documentos = \Auth::user()->documentos;
         

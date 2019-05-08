@@ -66,9 +66,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'telefono' => $data['telefono'],
             'password' => Hash::make($data['password']),
-        ])->with([
-            'mensaje' => 'Creada Correctamente',
-            'alert-class' => 'alert-success'
-        ]);//redirige a la ruta en el route list no de la vista
+        ]);
     }
 }

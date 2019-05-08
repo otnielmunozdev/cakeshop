@@ -77,6 +77,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    {{$pedido->links()}}
                         
                     </div>
                     </div>
