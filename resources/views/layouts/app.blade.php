@@ -91,7 +91,6 @@
                             <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                                 @guest
                                     <a class="dropdown-item" href="{{ route('login') }}">{{ __('Entrar') }}</a>
-                                    <a class="dropdown-item" href="{{ url('empleados/login') }}">{{ __('Empleados Login') }}</a>
                                 @if (Route::has('register'))
                                     <a class="dropdown-item" href="{{ route('register') }}">{{ __('Registro') }}</a>
                                 @endif
