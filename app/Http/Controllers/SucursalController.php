@@ -22,7 +22,7 @@ class SucursalController extends Controller
     public function index()
     {
         // $sucursales = DB::table('sucursales')->get();
-       //$sucursales = Sucursal::all(); //Documento::where() tambien se pueden utilizar select etc.
+       $sucursales = Sucursal::paginate(3); //Documento::where() tambien se pueden utilizar select etc.
         //->where('id', '>' ,'1')
         //->where('envia','pedro');
  
@@ -33,11 +33,11 @@ class SucursalController extends Controller
         //return view('Sucursales.sucursalIndex',compact('sucursales')); //'carpeta','nombrevista'
         //return Datatables::eloquent(App\Sucursal::query())->make(true);
        // return datatables()->eloquent(Sucursal::query())->make(true);
-       return view('Sucursales.sucursalIndex');
+       return view('Sucursales.sucursalIndex',compact('sucursales'));
         
     }
     
-    public function mostrarSucursalAjax()
+   /* public function mostrarSucursalAjax()
     {
        // return datatables()->eloquent(Sucursal::query())->make(true);
        $sucursales = Sucursal::all();//select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
@@ -50,7 +50,7 @@ class SucursalController extends Controller
             ->removeColumn('password')
             ->make(true);
         
-    }
+    }*/
 
     /**
      * Show the form for creating a new resource.

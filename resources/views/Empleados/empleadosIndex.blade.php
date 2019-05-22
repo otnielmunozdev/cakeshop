@@ -34,7 +34,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Correo</th>
-                        <th scope="col">Fecha de Nacimiento</th>
+                       {{-- <th scope="col">Fecha de Nacimiento</th>--}}
                         <th scope="col">Tel&eacute;fono</th>
                         <th scope="col">Rol</th>
 

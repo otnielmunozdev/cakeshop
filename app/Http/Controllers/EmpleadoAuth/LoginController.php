@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\EmpleadoAuth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 class LoginController extends Controller
 {
     /*
@@ -46,7 +47,7 @@ class LoginController extends Controller
     /**
      * Show the application's login form.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function showLoginForm()
     {

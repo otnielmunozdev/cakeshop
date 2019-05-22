@@ -79,7 +79,7 @@
                     @endif
                 </div>
 
-                <div class="form-group">
+                {{--<div class="form-group">
                         <label class="form-label"><strong>Fecha de nacimiento</strong></label>
                         <input type="date" class="form-control"  placeholder="Fecha de nacimiento del empleado" value="{{$empleado->fecha_nac ?? ''}}{{ old('fecha_nac') }}"name="fecha_nac" min="1940-01-01" max="2002-01-01">
                         @if ($errors->has('fecha_nac'))
@@ -87,7 +87,7 @@
                             <strong>{{ $errors->first('fecha_nac') }}</strong> 
                         </span>
                     @endif
-                </div>
+                </div>--}}
 
                 <div class="form-group">
                         <label class="form-label"><strong>Telefono</strong></label>
@@ -111,7 +111,7 @@
 
                 <div class="form-group">
                         <label class="form-label"><strong>Password (Para ingresar al sistema dentro de la empresa)</strong></label>
-                        <input type="password" class="form-control"  placeholder="Password" value="{{$empleado->password ?? ''}}{{ old('password') }}"name="password" >
+                        <input type="text" class="form-control"  placeholder="Password" value="{{$empleado->password ?? ''}}{{ old('password') }}"name="password" >
                         @if ($errors->has('password'))
                         <span class="alert alert-danger" role="alert">
                             <strong>{{ $errors->first('password') }}</strong> 

@@ -72,13 +72,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home'); 
 
 Route::group(['prefix'=> 'empleados'], function() {
 
     // Login Routes...
         Route::get('login', ['as' => 'empleado.login', 'uses' => 'EmpleadoAuth\LoginController@showLoginForm']); 
-        Route::post('login', ['uses' => 'EmpleadoAuth\LoginController@login']);
+        Route::post('login', ['as' => 'empleado.login', 'uses' => 'EmpleadoAuth\LoginController@login']);
         Route::post('logout', ['as' => 'empleado.logout', 'uses' => 'EmpleadoAuth\LoginController@logout']);
     
     // Registration Routes esto no lo necesito

@@ -29,7 +29,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Correo</th>
-                        <th scope="col">Fecha de Nacimiento</th>
+                       {{--<th scope="col">Fecha de Nacimiento</th>--}} 
                         <th scope="col">Tel&eacute;fono</th>
                         <th scope="col">Rol</th>
                         <th scope="col">Password</th>
@@ -42,7 +42,7 @@
                                 <td>{{$empleado->nombre}}</td>
                                 <td>{{$empleado->apellido}}</td>
                                 <td>{{$empleado->email}}</td>
-                                <td>{{$empleado->fecha_nac}}</td>
+                               {{--<td>{{$empleado->fecha_nac}}</td>--}} 
                                 <td>{{$empleado->telefono}}</td>
                                 <td>{{$empleado->rol}}</td>
                                 <td>{{$empleado->password}}</td>

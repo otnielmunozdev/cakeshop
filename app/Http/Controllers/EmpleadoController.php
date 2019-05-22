@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleado;
+use App\User;
 use App\Sucursal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class EmpleadoController extends Controller
 {
-    use AuthenticatesUsers;
+    //use AuthenticatesUsers;
     /**
      * Create a new controller instance.
      *
@@ -98,7 +99,7 @@ class EmpleadoController extends Controller
             'nombre' => 'required',
             'apellido' => 'required',
             'email' => ['required', 'email', 'unique:empleados'],
-            'fecha_nac' => 'required|date',
+            //'fecha_nac' => 'required|date',
             'telefono' => 'required|min:10|max:15',
             'rol' => 'required',
             'password' => 'required',
@@ -114,7 +115,7 @@ class EmpleadoController extends Controller
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
         $empleado->email = $request->email;
-        $empleado->fecha_nac = $request->fecha_nac;
+        //$empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
         $empleado->password = Hash::make($request['password']); 
         $empleado->rol = $request->rol;
@@ -162,7 +163,7 @@ class EmpleadoController extends Controller
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
         $empleado->email = $request->email;
-        $empleado->fecha_nac = $request->fecha_nac;
+       // $empleado->fecha_nac = $request->fecha_nac;
         $empleado->telefono = $request->telefono;
         $empleado->rol = $request->rol;
         $empleado->password = Hash::make($request['password']);

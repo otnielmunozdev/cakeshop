@@ -10,7 +10,7 @@
           {data: 'nombre', name: 'nombre'},
           {data: 'apellido', name: 'apellido'},
           {data: 'email', name: 'email'},
-          {data: 'fecha_nac', name: 'fecha_nac'},
+         // {data: 'fecha_nac', name: 'fecha_nac'},
           {data: 'telefono', name: 'telefono'},
           {data: 'rol', name: 'rol'},
 

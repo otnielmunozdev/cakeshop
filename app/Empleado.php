@@ -8,16 +8,16 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Empleado extends Model
+class Empleado extends model
 //class Empleado extends Authenticatable //nuevo
 {
-   // use Notifiable; //nuevo
+    //use Notifiable; //nuevo
 
     //protected $guard = 'empleado'; //nuevo
 
 
     public $timestamps = false;
-    protected $table = 'empleados';
+    protected $table = 'users';
    // protected $guard = 'empleados';
    
 

@@ -16,10 +16,12 @@ use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
+        'sucursal_id' => null,
         'nombre' => $faker->name,
         'apellido' => $faker->lastname,
         'email' => $faker->unique()->safeEmail,
         'telefono' => $faker->numberBetween($min = 1000000000, $max = 9000000000),
+        'rol' =>  null,
         'email_verified_at' => now(),
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => Str::random(10),
