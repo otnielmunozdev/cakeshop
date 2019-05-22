@@ -6,7 +6,7 @@ use App\Sucursal;
 use Illuminate\Http\Request; 
 use Yajra\Datatables\Datatables;
 
-class SucursalController extends Controller
+class SucursalController extends Controller 
 {
     public function mostrarSucursalVistaUsuario()
     {
@@ -21,6 +21,11 @@ class SucursalController extends Controller
      */
     public function index()
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
+
         // $sucursales = DB::table('sucursales')->get();
        $sucursales = Sucursal::paginate(3); //Documento::where() tambien se pueden utilizar select etc.
         //->where('id', '>' ,'1')
@@ -59,6 +64,12 @@ class SucursalController extends Controller
      */
     public function create()
     {
+        //Aplica DocumentoPolicy@delete
+        if(\Auth::user()->cannot('Admin')){
+            return redirect()->back();
+        }
+
+
         return view('Sucursales.sucursalForm');
     }
 
@@ -101,6 +112,14 @@ class SucursalController extends Controller
      */
     public function show(Sucursal $sucursale)
     {
+        //Aplica DocumentoPolicy@delete
+        if(\Auth::user()->cannot('Admin')){
+            return redirect()->back();
+        }
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         //dd($sucursale);
         return view('Sucursales.sucursalShow',compact('sucursale'));
     }
@@ -113,6 +132,10 @@ class SucursalController extends Controller
      */
     public function edit(Sucursal $sucursale)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         //dd($sucursale);
         return view('Sucursales.sucursalForm',compact('sucursale'));
     }
@@ -126,6 +149,10 @@ class SucursalController extends Controller
      */
     public function update(Request $request, Sucursal $sucursale)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         $sucursale->direccion = $request->input('direccion');//trae la informacion del formualrio del campo llamado dependencia
         $sucursale->horario = $request->horario; //es lo mismo
         $sucursale->mapa = $request->mapa;
@@ -145,6 +172,10 @@ class SucursalController extends Controller
      */
     public function destroy(Sucursal $sucursale)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         $sucursale->delete();//->onDelete('cascade');
         return redirect()->route('sucursales.index')->with([
             'mensaje' => 'La sucursal ha sido eliminada',

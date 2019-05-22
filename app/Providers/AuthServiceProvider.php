@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider; 
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        //'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Sucursal' => 'App\Policies\SucursalPolicy',
     ];
 
     /**
@@ -26,5 +27,18 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+
+         /**
+         * Define gate llamado 'ediatar-documento'
+         * 
+         * La expresión solo será verdadera si el usuario es quien recibe el documento
+         * 'editar-documento' Nombre del Gate
+         * $user Es la instancia del usuario logeado
+         * $documento Es la instancia del documento
+         * @return boolean
+         */
+        Gate::define('Admin', function($user) {
+            return $user->rol == "Administrador";
+        });
     }
 }

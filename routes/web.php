@@ -34,9 +34,9 @@ Route::get('api/sucursales','SucursalController@mostrarSucursalAjax'); //datatab
 Route::get('/informacion', 'PaginasController@informacion');
 Route::get('/contacto', 'PaginasController@contacto');
 //Route::get('/sucursales', 'SucursalController@index')->name('sucursales.index');
-Route::resource('/sucursales','SucursalController')->middleware('auth');
-Route::resource('/empleados','EmpleadoController')->middleware('auth');
-Route::get('api/empleados','EmpleadoController@mostrarEmpleadoAjax')->middleware('auth'); //datatables 
+Route::resource('/sucursales','SucursalController')->middleware('auth','can:Admin');
+Route::resource('/empleados','EmpleadoController')->middleware('auth','can:Admin');
+Route::get('api/empleados','EmpleadoController@mostrarEmpleadoAjax')->middleware('auth','can:Admin'); //datatables 
 
 
 Route::resource('/producto','ProductoController')->middleware('auth');

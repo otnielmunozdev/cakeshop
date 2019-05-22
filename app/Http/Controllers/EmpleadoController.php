@@ -52,12 +52,20 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         //return datatables()->eloquent(Empleado::query())->toJson();
         return view('Empleados.empleadosIndex');
     }
 
     public function mostrarEmpleadoAjax()
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
        // return datatables()->eloquent(Sucursal::query())->make(true);
        $sucursales = Sucursal::all();
        $empleados = Empleado::all();
@@ -81,6 +89,10 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         $sucursales = Sucursal::all();
         //dd($sucursales);
         return view('Empleados.empleadosForm',compact('sucursales'));
@@ -94,6 +106,10 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
 
         $request->validate([
             'nombre' => 'required',
@@ -134,6 +150,10 @@ class EmpleadoController extends Controller
      */
     public function show(Empleado $empleado)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         return view('Empleados.empleadoShow', compact('empleado'));
     }
 
@@ -145,6 +165,10 @@ class EmpleadoController extends Controller
      */
     public function edit(Empleado $empleado)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
         $sucursales = Sucursal::all();
         
         return view('Empleados.empleadosForm', compact('empleado','sucursales'));
@@ -159,6 +183,11 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, Empleado $empleado)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        }
+
         $empleado->sucursal_id = $request->sucursal_id; //user()->id;
         $empleado->nombre = $request->nombre;
         $empleado->apellido = $request->apellido;
@@ -183,6 +212,10 @@ class EmpleadoController extends Controller
      */
     public function destroy(Empleado $empleado)
     {
+        if (\Gate::denies('Admin')) {
+            return redirect()->back()
+                ->with(['mensaje' => 'No tienes acceso']);
+        } 
         $empleado->delete();
         return redirect()->route('empleados.index')
             ->with([
