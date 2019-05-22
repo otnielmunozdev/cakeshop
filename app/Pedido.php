@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     protected $guarded = ['id'];
+    protected $dates = ['fecha_solicitado', 'fecha_entrega', 'created_at', 'updated_at', 'deleted_at'];
 
 
     /**
@@ -37,6 +38,6 @@ class Pedido extends Model
      */
     public function getSolicitadoEntregaAttribute()
     {
-        return $this->fecha_solicitado . ' ************* ' . $this->fecha_entrega;
+        return $this->fecha_solicitado->format('d/m/Y') . ' ************* ' . $this->fecha_entrega->format('d/m/Y');
     }
 }

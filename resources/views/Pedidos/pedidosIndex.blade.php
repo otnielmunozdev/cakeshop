@@ -52,8 +52,8 @@
                                                     <td>{{ $ped->id }}</td>
                                                     <td>{{ $ped->user_id }}</td>
                                                     <td>{{ $ped->user->nombre }} ({{ $ped->user->email }})</td>
-                                                    <td>{{$ped->fecha_solicitado}} </td>
-                                                    <td>{{$ped->fecha_entrega}} </td>
+                                                    <td>{{$ped->fecha_solicitado->format('d/m/Y')}} </td>
+                                                    <td>{{$ped->fecha_entrega->format('d/m/Y')}} </td>
                                                     <td>
                                                         <ol type="a">
                                                             @foreach($ped->productos as $produc)

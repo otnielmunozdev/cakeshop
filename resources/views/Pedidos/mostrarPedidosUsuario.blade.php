@@ -52,8 +52,8 @@
                                     <hr>
                                     <div class=""><br></div>
                                     <div class="col-12 font-20 bold text-center">
-                                            <p> Solicitaste tu pedido el dia {{$ped->fecha_solicitado}} </p>
-                                            <p> La entrega se realizara el dia {{$ped->fecha_entrega}} </p>
+                                            <p> Solicitaste tu pedido el dia {{$ped->fecha_solicitado->format('d/m/Y')}} </p>
+                                            <p> La entrega se realizara el dia {{$ped->fecha_entrega->format('d/m/Y')}} </p>
                                     </div>
                                 </div>
                                 <hr>
