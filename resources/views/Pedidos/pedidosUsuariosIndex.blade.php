@@ -35,8 +35,7 @@
                                                     <th>ID</th>
                                                     <th>User ID</th>--}}
                                                     <th>Datos del Cliente</th>
-                                                    <th>Fecha Solicitado</th>
-                                                    <th>Fecha Entrega</th>
+                                                    <th>Fecha Solicitado - Fecha de Entrega</th>
                                                   {{--  <th>Producto ID</th>--}}
                                                     <th>Productos</th>
                                                     
@@ -52,8 +51,7 @@
                                                         <td>{{ $ped->id }}</td>
                                                         <td>{{ $ped->user_id }}</td>--}}
                                                         <td>{{ $ped->user->nombre }} ({{ $ped->user->email }})</td>
-                                                        <td>{{$ped->fecha_solicitado}} </td>
-                                                        <td>{{$ped->fecha_entrega}} </td>
+                                                        <td>{{$ped->solicitado_entrega}} </td>
                                                         {{--<td>
                                                             <ul>
                                                                 @foreach($ped->productos as $produc)

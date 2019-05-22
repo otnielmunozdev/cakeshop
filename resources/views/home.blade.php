@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="page-title text-center">
-            <h1>Bienvenido {{session('apodo')}} , puedes ordenar tus pedidos ahora mismo</h1>            
+            <h1>Bienvenid@ {{session('apodo')}} , puedes ordenar tus pedidos ahora mismo</h1>            
     </div>
 </div>
 

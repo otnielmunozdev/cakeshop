@@ -25,4 +25,20 @@ class Empleado extends model
     {
         return $this->belongsToMany(Sucursal::class);
     }
+
+     /**
+     * Guarda el nombre en mayúsculas.
+     * @param string $nombre
+     * @return void
+     */
+    
+    public function setNombreAttribute($nombre)
+    {
+        $this->attributes['nombre'] = strtoupper($nombre);
+    }
+
+    public function setApellidoAttribute($apellido)
+    {
+        $this->attributes['apellido'] = strtoupper($apellido);
+    }
 }

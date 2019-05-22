@@ -41,4 +41,21 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Pedido');
     }
+
+        /**
+     * Guarda el nombre en mayúsculas.
+     * @param string $nombre
+     * @return void
+     */
+    public function setNombreAttribute($nombre)
+    {
+        $this->attributes['nombre'] = strtoupper($nombre);
+    }
+
+    public function setApellidoAttribute($apellido)
+    {
+        $this->attributes['apellido'] = strtoupper($apellido);
+    }
+
+
 }

@@ -28,4 +28,15 @@ class Pedido extends Model
     {
         return $this->belongsToMany(Producto::class);
     }
+
+
+    
+        /**
+     * Obtiene el nombre y cargo del funcionario en un solo atributo "dinámico" (nombre_cargo)
+     * @return string
+     */
+    public function getSolicitadoEntregaAttribute()
+    {
+        return $this->fecha_solicitado . ' ************* ' . $this->fecha_entrega;
+    }
 }
