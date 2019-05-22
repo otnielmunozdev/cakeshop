@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::where('rol', '=', NULL)->get();
         //dd($usuarios);
         return view('Users.userIndex');
     }
@@ -26,7 +26,7 @@ class UserController extends Controller
     public function mostrarUsuariosAjax()
     {
        // return datatables()->eloquent(Sucursal::query())->make(true);
-       $usuarios = User::all();//select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
+       $usuarios = User::where('rol', '=', NULL)->get();//select(['id', 'direccion', 'horario', 'mapa', 'telefono']);
        
 
         return Datatables::of($usuarios)

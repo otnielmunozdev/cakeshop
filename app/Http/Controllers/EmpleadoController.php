@@ -68,9 +68,14 @@ class EmpleadoController extends Controller
         }
        // return datatables()->eloquent(Sucursal::query())->make(true);
        $sucursales = Sucursal::all();
-       $empleados = Empleado::all();
+       $empleados = Empleado::where('rol', 'like', '%'."Empleado".'%')->orWhere('rol', 'like', '%'."Administrador".'%')->get();
+       /* $empleados = Empleado::with([function ($query) {
+        $query->where('rol', 'like', '%Empleado%');
+        }])->get();*/
 
        //dd($empleados);
+
+       //$empleados = Empleado::has('sucursal')->get();
       
         return Datatables::of($empleados)
             ->addColumn('action', function ($empleados) {
