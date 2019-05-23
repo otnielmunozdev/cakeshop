@@ -21,6 +21,7 @@ class CreateProductosTable extends Migration
             $table->integer('precio');
             $table->text('descripcion');
             $table->string('imagen');
+            $table->softDeletes();
 
             //$table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();
