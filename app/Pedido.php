@@ -30,6 +30,11 @@ class Pedido extends Model
         return $this->belongsToMany(Producto::class);
     }
 
+    public function sucursal()
+    {
+        return $this->belongsToMany(Sucursal::class);
+    }
+
 
     
         /**

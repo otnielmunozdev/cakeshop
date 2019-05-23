@@ -38,12 +38,13 @@
                                                     <th>Fecha Solicitado - Fecha de Entrega</th>
                                                   {{--  <th>Producto ID</th>--}}
                                                     <th>Productos</th>
+                                                    <th>Sucursal</th>
                                                     
                             
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($pedido as $ped)
+                                                @foreach($pedido as $ped) 
                                                     <tr>
                                                        {{-- <td>
                                                             <a href="{{route('pedidosUser.show',$ped->id)}}" class="btn btn-info btn-sm"><i class="fas fa-exclamation"></i> Detalle</a>
@@ -65,6 +66,9 @@
                                                                     <li>{{ $produc->nombre }}</li>
                                                                 @endforeach
                                                             </ul>
+                                                        </td>
+                                                        <td>
+                                                            {{$ped->sucursal_id}}
                                                         </td>
                                                         {{--<td>
                                                             <a href="{{route('pedidosUser.edit',$ped->id)}}" class="btn btn-sm btn-warning">

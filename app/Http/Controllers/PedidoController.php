@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pedido;
 use App\Producto;
 use App\User;
+use App\Sucursal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class PedidoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth'); 
 
     }
 
@@ -23,7 +24,11 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedido = Pedido::with(['productos'],['users'])->paginate(3);//all();
+        if(\Auth::user()->rol == "Empleado"){
+        $pedido = Pedido::with(['productos'],['users'],['sucursales'])->where('sucursal_id','=',\Auth::user()->sucursal_id)->paginate(3);}//all();
+        else{
+            $pedido = Pedido::with(['productos'],['users'],['sucursales'])->paginate(3);
+        }
         //Realiza una consulta de los documentos del usuario logeado
         //$documentos = \Auth::user()->documentos;
         
@@ -42,7 +47,8 @@ class PedidoController extends Controller
                 ->orderBy('apellido', 'asc')
                 ->get();
         $productos = Producto::all();
-        return view('Pedidos.pedidosForm', compact('usuarios', 'productos'));
+        $sucursales = Sucursal::all();
+        return view('Pedidos.pedidosForm', compact('usuarios', 'productos','sucursales'));
     }
 
     /**
@@ -57,6 +63,7 @@ class PedidoController extends Controller
             'user_id' => 'required|',
             'fecha_entrega' => 'required|date',
             'producto_id' => 'required',
+            'sucursal_id' => 'required',
         ]);
 
         //dd($request);
@@ -142,7 +149,8 @@ class PedidoController extends Controller
     {
         $usuarios = User::all();
         $productos = Producto::all();
-        return view('Pedidos.pedidosForm', compact('pedido', 'usuarios', 'productos'));
+        $sucursales = Sucursal::all();
+        return view('Pedidos.pedidosForm', compact('pedido', 'usuarios', 'productos','sucursales'));
     }
 
     /**

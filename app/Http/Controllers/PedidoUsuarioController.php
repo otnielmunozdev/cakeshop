@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pedido;
 use App\Producto;
 use App\User;
+use App\Sucursal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -51,8 +52,9 @@ class PedidoUsuarioController extends Controller
     public function create()
     {
         $productos = Producto::all();
+        $sucursales = Sucursal::all();
         $pedido = \Auth::user()->pedidos;
-        return view('Pedidos.pedidosUsuariosForm', compact('productos', 'pedidos'));
+        return view('Pedidos.pedidosUsuariosForm', compact('productos', 'pedidos','sucursales'));
 
 
 
@@ -68,6 +70,7 @@ class PedidoUsuarioController extends Controller
     {
         $request->validate([
             'user_id' => 'required',
+            'sucursal_id' => 'required',
             'fecha_entrega' => 'required|date',
             'producto_id' => 'required',
         ]);
@@ -105,8 +108,9 @@ class PedidoUsuarioController extends Controller
     {
         //dd($pedido);
         $productos = Producto::all();
+        $sucursales = Sucursal::all();
         //$pedido = \Auth::user()->pedido;
-        return view('Pedidos.pedidosUsuariosForm', compact('pedido', 'productos'));
+        return view('Pedidos.pedidosUsuariosForm', compact('pedido', 'productos','sucursales'));
     }
 
     /**

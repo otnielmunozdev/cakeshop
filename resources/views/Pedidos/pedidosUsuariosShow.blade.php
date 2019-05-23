@@ -25,6 +25,7 @@
                     <thead>
                         <th scope="col">ID</th>
                         <th scope="col">User ID</th>
+                        <th scope="col">Sucursal ID</th>
                         <th scope="col">Fecha de entrega</th>
                         <th scope="col">Fecha Solicitado</th>
                         <th scope="col" colspan="6" class="text-center">Acciones</th>
@@ -33,6 +34,7 @@
                             <tr>
                                 <td scope="row">{{$pedido->id}}</td>
                                 <td>{{$pedido->user_id}}</td>
+                                <td>{{$pedido->sucursal_id}}</td>
                                 <td>{{$pedido->fecha_solicitado}}</td>
                                 <td>{{$pedido->fecha_entrega}}</td>
                             <td >

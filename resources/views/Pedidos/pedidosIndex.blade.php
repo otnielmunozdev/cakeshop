@@ -34,6 +34,7 @@
                                                 <th>Acciones</th>
                                                 <th>ID</th>
                                                 <th>User ID</th>
+                                                <th>Sucursal ID</th>
                                                 <th>Datos del Cliente</th>
                                                 <th>Fecha Solicitado</th>
                                                 <th>Fecha Entrega</th>
@@ -51,6 +52,7 @@
                                                     </td>
                                                     <td>{{ $ped->id }}</td>
                                                     <td>{{ $ped->user_id }}</td>
+                                                    <td>{{$ped->sucursal_id}}</td>
                                                     <td>{{ $ped->user->nombre }} ({{ $ped->user->email }})</td>
                                                     <td>{{$ped->fecha_solicitado->format('d/m/Y')}} </td>
                                                     <td>{{$ped->fecha_entrega->format('d/m/Y')}} </td>

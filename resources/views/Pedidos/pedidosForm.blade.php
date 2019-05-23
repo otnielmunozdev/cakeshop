@@ -45,7 +45,7 @@
                                   <label class="form-label">Usuario de asignacion al pedido</label>
                                   <select name="user_id" class="form-control">
                                     @foreach($usuarios as $usuario)
-                                        <option value="{{ $usuario->id }}"{{ isset($pedido) && $pedido->user_id == $usuario->id ? 'selected' : '' }}>{{ $usuario->apellido }}-{{ $usuario->nombre }}-{{ $usuario->email }}</option>
+                                        <option value="{{ $usuario->id }}"{{ isset($pedido) && $pedido->user_id == $usuario->id ? 'selected' : '' }}>{{ $usuario->apellido }}-{{ $usuario->nombre }}-{{ $usuario->email }}-{{ $usuario->rol }}</option>
                                     @endforeach
                                   </select>
                                 </div>
@@ -64,6 +64,17 @@
                                     @endforeach
                                   </select>
                                 </div>
+
+
+                                <div class="form-group">
+                                  <label class="form-label">Sucursal para recoger el pedido</label>
+                                  <select name="sucursal_id" class="form-control">
+                                    @foreach($sucursales as $sucursal)
+                                        <option value="{{ $sucursal->id }}"{{ isset($pedido) && $pedido->sucursal_id == $sucursal->id ? 'selected' : '' }}>{{ $sucursal->direccion }}</option>
+                                    @endforeach
+                                  </select>
+                                </div>
+
                 
                                 <button type="submit" class="btn btn-primary ml-auto">Aceptar</button>
                                 <button type="reset" class="btn btn-info block offset-9"><i class="fas fa-minus"></i>  Limpiar Campos</button>
