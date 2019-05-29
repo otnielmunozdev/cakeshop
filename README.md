@@ -1,7 +1,7 @@
 # PROYECTO PROGRAMACION PARA INTERNET "CAKE SHOP"
 
 
-### Descripcion 
+### Descripción 
 _Este sistema trata sobre la administracion de una franquicia de sucursales de pastelerias la cual contiene:_
 
 - tiendas
